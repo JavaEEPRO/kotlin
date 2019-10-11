@@ -1,1 +1,1 @@
-web: java -jar target/kotlin.war --server.port=$PORT
+web: java -jar build/libs/kotlin.war --server.port=$PORT
