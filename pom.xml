@@ -148,6 +148,51 @@
         </resources>
 
         <plugins>
+
+            <!--             for kotlin-->
+            <plugin>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <version>1.3.50</version>
+                <configuration>
+                    <compilerPlugins>
+                        <plugin>spring</plugin>
+                    </compilerPlugins>
+                    <jvmTarget>1.8</jvmTarget>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-maven-allopen -->
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-allopen</artifactId>
+                        <version>1.3.50</version>
+                    </dependency>
+
+                </dependencies>
+            </plugin>
+
+
+
+
+
+            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -175,45 +220,6 @@
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
-
-<!--             for kotlin-->
-                        <plugin>
-                            <artifactId>kotlin-maven-plugin</artifactId>
-                            <groupId>org.jetbrains.kotlin</groupId>
-                            <version>1.3.50</version>
-                            <configuration>
-                                <compilerPlugins>
-                                    <plugin>spring</plugin>
-                                </compilerPlugins>
-                                <jvmTarget>1.8</jvmTarget>
-                            </configuration>
-                            <executions>
-                                <execution>
-                                    <id>compile</id>
-                                    <phase>compile</phase>
-                                    <goals>
-                                        <goal>compile</goal>
-                                    </goals>
-                                </execution>
-                                <execution>
-                                    <id>test-compile</id>
-                                    <phase>test-compile</phase>
-                                    <goals>
-                                        <goal>test-compile</goal>
-                                    </goals>
-                                </execution>
-                            </executions>
-                            <dependencies>
-                                <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-maven-allopen -->
-                                <dependency>
-                                    <groupId>org.jetbrains.kotlin</groupId>
-                                    <artifactId>kotlin-maven-allopen</artifactId>
-                                    <version>1.3.50</version>
-                                </dependency>
-
-                            </dependencies>
-                        </plugin>
-
         </plugins>
     </build>
 
